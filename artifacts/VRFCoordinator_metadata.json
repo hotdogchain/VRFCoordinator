@@ -1,0 +1,446 @@
+{
+	"compiler": {
+		"version": "0.6.6+commit.6c089d02"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_link",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_blockHashStore",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "keyHash",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "fee",
+						"type": "uint256"
+					}
+				],
+				"name": "NewServiceAgreement",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "keyHash",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "seed",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "bytes32",
+						"name": "jobID",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "fee",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "requestID",
+						"type": "bytes32"
+					}
+				],
+				"name": "RandomnessRequest",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "bytes32",
+						"name": "requestId",
+						"type": "bytes32"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "output",
+						"type": "uint256"
+					}
+				],
+				"name": "RandomnessRequestFulfilled",
+				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "PRESEED_OFFSET",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "PROOF_LENGTH",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "PUBLIC_KEY_OFFSET",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"name": "callbacks",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "callbackContract",
+						"type": "address"
+					},
+					{
+						"internalType": "uint96",
+						"name": "randomnessFee",
+						"type": "uint96"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "seedAndBlockNum",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes",
+						"name": "_proof",
+						"type": "bytes"
+					}
+				],
+				"name": "fulfillRandomnessRequest",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256[2]",
+						"name": "_publicKey",
+						"type": "uint256[2]"
+					}
+				],
+				"name": "hashOfKey",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "pure",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_sender",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_fee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "_data",
+						"type": "bytes"
+					}
+				],
+				"name": "onTokenTransfer",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_fee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "_oracle",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256[2]",
+						"name": "_publicProvingKey",
+						"type": "uint256[2]"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "_jobID",
+						"type": "bytes32"
+					}
+				],
+				"name": "registerProvingKey",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"name": "serviceAgreements",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "vRFOracle",
+						"type": "address"
+					},
+					{
+						"internalType": "uint96",
+						"name": "fee",
+						"type": "uint96"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "jobID",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_recipient",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_amount",
+						"type": "uint256"
+					}
+				],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "withdrawableTokens",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"methods": {
+				"fulfillRandomnessRequest(bytes)": {
+					"details": "The structure of _proof corresponds to vrf.MarshaledOnChainResponse,in the node source code. I.e., it is a vrf.MarshaledProof with theseed replaced by the preSeed, followed by the hash of the requestingblock.",
+					"params": {
+						"_proof": "the proof of randomness. Actual random output built from this"
+					}
+				},
+				"hashOfKey(uint256[2])": {
+					"params": {
+						"_publicKey": "the key to return the address for"
+					}
+				},
+				"onTokenTransfer(address,uint256,bytes)": {
+					"details": "To invoke this, use the requestRandomness method in VRFConsumerBase.The VRFCoordinator will call back to the calling contract when theoracle responds, on the method fulfillRandomness. SeeVRFConsumerBase.fulfilRandomness for its signature. Your consumingcontract should inherit from VRFConsumerBase, and implementfulfilRandomness.",
+					"params": {
+						"_data": "abi-encoded call to randomnessRequest",
+						"_fee": "amount of LINK sent",
+						"_sender": "address: who sent the LINK (must be a contract)"
+					}
+				},
+				"registerProvingKey(uint256,address,uint256[2],bytes32)": {
+					"params": {
+						"_fee": "minimum LINK payment required to serve randomness",
+						"_jobID": "ID of the corresponding chainlink job in the oracle's db",
+						"_oracle": "the address of the Chainlink node with the proving key and job",
+						"_publicProvingKey": "public key used to prove randomness"
+					}
+				},
+				"withdraw(address,uint256)": {
+					"details": "Allows the oracle operator to withdraw their LINK",
+					"params": {
+						"_amount": "is the amount of LINK transferred from the Coordinator contract",
+						"_recipient": "is the address the funds will be sent to"
+					}
+				}
+			},
+			"title": "VRFCoordinator coordinates on-chain verifiable-randomness requestswith off-chain responses"
+		},
+		"userdoc": {
+			"methods": {
+				"fulfillRandomnessRequest(bytes)": {
+					"notice": "Called by the chainlink node to fulfill requests"
+				},
+				"hashOfKey(uint256[2])": {
+					"notice": "Returns the serviceAgreements key associated with this public key"
+				},
+				"onTokenTransfer(address,uint256,bytes)": {
+					"notice": "Called by LINK.transferAndCall, on successful LINK transfer"
+				},
+				"registerProvingKey(uint256,address,uint256[2],bytes32)": {
+					"notice": "Commits calling address to serve randomness"
+				}
+			}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Users/leilei/Downloads/VRFCoordinator/VRFCoordinator.sol": "VRFCoordinator"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Users/leilei/Downloads/VRFCoordinator/SafeMath.sol": {
+			"keccak256": "0x6fa676e33e7598f560867c1dd353babae081c77580cbda47ac6bdffa5fb5fb24",
+			"urls": [
+				"bzz-raw://2a60cf6f368640c4b3c6457243a8ced9328a3f2bd4c97ed3f7506dc07bc94e27",
+				"dweb:/ipfs/Qmd1FK8mjdE8GX4nojZqsgDStV2EeQko7cjDMV2qL1cuBP"
+			]
+		},
+		"Users/leilei/Downloads/VRFCoordinator/VRF.sol": {
+			"keccak256": "0x82ef9afa58b83af09901c42ae3c8e23ca77064fd256f2bf8b08e9dd04e77864f",
+			"urls": [
+				"bzz-raw://7041a16497009a5efec9eebad666bae1a83c9333f69875a0fb358b863db0c9e8",
+				"dweb:/ipfs/QmThshxL8Fkk2F5L2V2o2aSgXsdC5AUj8gSMn7jUizgrAC"
+			]
+		},
+		"Users/leilei/Downloads/VRFCoordinator/VRFConsumerBase.sol": {
+			"keccak256": "0x43a14fe073e276a7e029b08e484c209a91a3f247666e839905cde4e494970157",
+			"urls": [
+				"bzz-raw://8bbcfa5979d35aa628e85c679ad8a6af68f90543e7c604ba76bdc32e743537a2",
+				"dweb:/ipfs/QmUaJLdCjaWVCJpnFnngjr9mA1QkCKs1SqjJPmdDw3ntoJ"
+			]
+		},
+		"Users/leilei/Downloads/VRFCoordinator/VRFCoordinator.sol": {
+			"keccak256": "0x1acc6237b8ad9e2be07d39641f666763a03b08c6ed4e8d186287ccf173f64b9b",
+			"urls": [
+				"bzz-raw://428414cc849676f67c1a605c307a2072125a5ca649be685f9d8f7b4909692fde",
+				"dweb:/ipfs/QmRSjiAGdkKEdKGRPeUeaKRmapMR5YGVJjJwDnn2QbqW82"
+			]
+		},
+		"Users/leilei/Downloads/VRFCoordinator/VRFRequestIDBase.sol": {
+			"keccak256": "0xdf34b43d3073edfbf56c9b8d99edd00c09b10eda82dfee45d14d199bf42ee631",
+			"urls": [
+				"bzz-raw://9f4fe1079f975fe7193964cad81a93776c3ef1be353744b0fbef3a757b750e8d",
+				"dweb:/ipfs/QmceqfHiF4SxMPoMJYPEiqPh65UYnBhHKBizFhzG1Q8Bim"
+			]
+		},
+		"Users/leilei/Downloads/VRFCoordinator/interfaces/BlockHashStoreInterface.sol": {
+			"keccak256": "0xa204f747eb96f5712992d1bf47fe1bc1d705940cc7466fa6807be05f04d597da",
+			"urls": [
+				"bzz-raw://1f9cd2401b9825a82091d9dda11e709c3a8424828932c01b6efe60d63d9df474",
+				"dweb:/ipfs/QmbZRosnHnMK2AnmuG8sK6yHn8iZ8kgHc7o1jU2dijgqur"
+			]
+		},
+		"Users/leilei/Downloads/VRFCoordinator/interfaces/LinkTokenInterface.sol": {
+			"keccak256": "0xbf1b1b0f6fc72a45cae680506dd7effc625973443cde0b9c24a9ad6a0c08f4a7",
+			"urls": [
+				"bzz-raw://9d81480b9e88c40870fbf1ac4ef1fa336b83f780ca60f4e699e300da7346f07c",
+				"dweb:/ipfs/Qmeezc5gCP5RvRRC27wqDkyZH7do98nqBmNAxie3yajQJz"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,94 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"görli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"linkReferences": {},
+			"object": "6080604052348015600f57600080fd5b5060858061001e6000396000f3fe6080604052348015600f57600080fd5b506004361060285760003560e01c8063e911439c14602d575b600080fd5b60336049565b6040518082815260200191505060405180910390f35b6101a08156fea264697066735822122062c568753406fff062c1e3a6fcb943934dc74b1aa812a5e82c9ff3b6a6bbefbf64736f6c63430006060033",
+			"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x85 DUP1 PUSH2 0x1E PUSH1 0x0 CODECOPY PUSH1 0x0 RETURN INVALID PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH1 0x28 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0xE911439C EQ PUSH1 0x2D JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x33 PUSH1 0x49 JUMP JUMPDEST PUSH1 0x40 MLOAD DUP1 DUP3 DUP2 MSTORE PUSH1 0x20 ADD SWAP2 POP POP PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 RETURN JUMPDEST PUSH2 0x1A0 DUP2 JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 PUSH3 0xC56875 CALLVALUE MOD SELFDESTRUCT CREATE PUSH3 0xC1E3A6 0xFC 0xB9 NUMBER SWAP4 0x4D 0xC7 0x4B BYTE 0xA8 SLT 0xA5 0xE8 0x2C SWAP16 RETURN 0xB6 0xA6 0xBB 0xEF 0xBF PUSH5 0x736F6C6343 STOP MOD MOD STOP CALLER ",
+			"sourceMap": "7137:19411:0:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;7137:19411:0;;;;;;;"
+		},
+		"deployedBytecode": {
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "6080604052348015600f57600080fd5b506004361060285760003560e01c8063e911439c14602d575b600080fd5b60336049565b6040518082815260200191505060405180910390f35b6101a08156fea264697066735822122062c568753406fff062c1e3a6fcb943934dc74b1aa812a5e82c9ff3b6a6bbefbf64736f6c63430006060033",
+			"opcodes": "PUSH1 0x80 PUSH1 0x40 MSTORE CALLVALUE DUP1 ISZERO PUSH1 0xF JUMPI PUSH1 0x0 DUP1 REVERT JUMPDEST POP PUSH1 0x4 CALLDATASIZE LT PUSH1 0x28 JUMPI PUSH1 0x0 CALLDATALOAD PUSH1 0xE0 SHR DUP1 PUSH4 0xE911439C EQ PUSH1 0x2D JUMPI JUMPDEST PUSH1 0x0 DUP1 REVERT JUMPDEST PUSH1 0x33 PUSH1 0x49 JUMP JUMPDEST PUSH1 0x40 MLOAD DUP1 DUP3 DUP2 MSTORE PUSH1 0x20 ADD SWAP2 POP POP PUSH1 0x40 MLOAD DUP1 SWAP2 SUB SWAP1 RETURN JUMPDEST PUSH2 0x1A0 DUP2 JUMP INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 PUSH3 0xC56875 CALLVALUE MOD SELFDESTRUCT CREATE PUSH3 0xC1E3A6 0xFC 0xB9 NUMBER SWAP4 0x4D 0xC7 0x4B BYTE 0xA8 SLT 0xA5 0xE8 0x2C SWAP16 RETURN 0xB6 0xA6 0xBB 0xEF 0xBF PUSH5 0x736F6C6343 STOP MOD MOD STOP CALLER ",
+			"sourceMap": "7137:19411:0:-:0;;;;5:9:-1;2:2;;;27:1;24;17:12;2:2;7137:19411:0;;;;;;;;;;;;;;;;12:1:-1;9;2:12;24594:351:0;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;24630:315;24594:351;:::o"
+		},
+		"gasEstimates": {
+			"creation": {
+				"codeDepositCost": "26600",
+				"executionCost": "81",
+				"totalCost": "26681"
+			},
+			"external": {
+				"PROOF_LENGTH()": "183"
+			},
+			"internal": {
+				"affineECAdd(uint256[2] memory,uint256[2] memory,uint256)": "infinite",
+				"bigModExp(uint256,uint256)": "infinite",
+				"ecmulVerify(uint256[2] memory,uint256,uint256[2] memory)": "infinite",
+				"fieldHash(bytes memory)": "infinite",
+				"hashToCurve(uint256[2] memory,uint256)": "infinite",
+				"isOnCurve(uint256[2] memory)": "infinite",
+				"linearCombination(uint256,uint256[2] memory,uint256[2] memory,uint256,uint256[2] memory,uint256[2] memory,uint256)": "infinite",
+				"newCandidateSecp256k1Point(bytes memory)": "infinite",
+				"projectiveECAdd(uint256,uint256,uint256,uint256)": "infinite",
+				"projectiveMul(uint256,uint256,uint256,uint256)": "infinite",
+				"projectiveSub(uint256,uint256,uint256,uint256)": "infinite",
+				"randomValueFromVRFProof(bytes memory)": "infinite",
+				"scalarFromCurvePoints(uint256[2] memory,uint256[2] memory,uint256[2] memory,address,uint256[2] memory)": "infinite",
+				"squareRoot(uint256)": "infinite",
+				"verifyLinearCombinationWithGenerator(uint256,uint256[2] memory,uint256,address)": "infinite",
+				"verifyVRFProof(uint256[2] memory,uint256[2] memory,uint256,uint256,uint256,address,uint256[2] memory,uint256[2] memory,uint256)": "infinite",
+				"ySquared(uint256)": "infinite"
+			}
+		},
+		"methodIdentifiers": {
+			"PROOF_LENGTH()": "e911439c"
+		}
+	},
+	"abi": [
+		{
+			"inputs": [],
+			"name": "PROOF_LENGTH",
+			"outputs": [
+				{
+					"internalType": "uint256",
+					"name": "",
+					"type": "uint256"
+				}
+			],
+			"stateMutability": "view",
+			"type": "function"
+		}
+	]
+}

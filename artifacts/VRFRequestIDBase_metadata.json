@@ -1,0 +1,40 @@
+{
+	"compiler": {
+		"version": "0.6.6+commit.6c089d02"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"methods": {}
+		},
+		"userdoc": {
+			"methods": {}
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Users/leilei/Downloads/VRFCoordinator/VRFRequestIDBase.sol": "VRFRequestIDBase"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Users/leilei/Downloads/VRFCoordinator/VRFRequestIDBase.sol": {
+			"keccak256": "0xdf34b43d3073edfbf56c9b8d99edd00c09b10eda82dfee45d14d199bf42ee631",
+			"urls": [
+				"bzz-raw://9f4fe1079f975fe7193964cad81a93776c3ef1be353744b0fbef3a757b750e8d",
+				"dweb:/ipfs/QmceqfHiF4SxMPoMJYPEiqPh65UYnBhHKBizFhzG1Q8Bim"
+			]
+		}
+	},
+	"version": 1
+}

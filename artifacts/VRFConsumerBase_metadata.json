@@ -1,0 +1,162 @@
+{
+	"compiler": {
+		"version": "0.6.6+commit.6c089d02"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_vrfCoordinator",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "_link",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"name": "nonces",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "requestId",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "randomness",
+						"type": "uint256"
+					}
+				],
+				"name": "rawFulfillRandomness",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_keyHash",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_fee",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_seed",
+						"type": "uint256"
+					}
+				],
+				"name": "requestRandomness",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "requestId",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "PURPOSEReggie the Random Oracle (not his real job) wants to provide randomnessto Vera the verifier in such a way that Vera can be sure he's notmaking his output up to suit himself. Reggie provides Vera a public keyto which he knows the secret key. Each time Vera provides a seed toReggie, he gives back a value which is computed completelydeterministically from the seed and the secret key.Reggie provides a proof by which Vera can verify that the output wascorrectly computed once Reggie tells it to her, but without that proof,the output is indistinguishable to her from a uniform random samplefrom the output space.The purpose of this contract is to make it easy for unrelated contractsto talk to Vera the verifier about the work Reggie is doing, to providesimple access to a verifiable source of randomness. *****************************************************************************USAGECalling contracts must inherit from VRFConsumerInterface, and caninitialize VRFConsumerInterface's attributes in their constructor asshown:contract VRFConsumer {constuctor(<other arguments>, address _vrfCoordinator, address _link)VRFConsumerBase(_vrfCoordinator, _link) public {<initialization with other arguments goes here>}}The oracle will have given you an ID for the VRF keypair they havecommitted to (let's call it keyHash), and have told you the minimum LINKprice for VRF service. Make sure your contract has sufficient LINK, andcall requestRandomness(keyHash, fee, seed), where seed is the input youwant to generate randomness from.Once the VRFCoordinator has received and validated the oracle's responseto your request, it will call your contract's fulfillRandomness method.The randomness argument to fulfillRandomness is the actual random valuegenerated from your seed.The requestId argument is generated from the keyHash and the seed bymakeRequestId(keyHash, seed). If your contract could have concurrentrequests open, you can use the requestId to track which seed isassociated with which randomness. See VRFRequestIDBase.sol for moredetails.Colliding `requestId`s are cryptographically impossible as long as seedsdiffer. (Which is critical to making unpredictable randomness! See thenext section.) * *****************************************************************************SECURITY CONSIDERATIONSSince the ultimate input to the VRF is mixed with the block hash of theblock in which the request is made, user-provided seeds have no impacton its economic security properties. They are only included for APIcompatability with previous versions of this contract.Since the block hash of the block which contains the requestRandomness()call is mixed into the input to the VRF *last*, a sufficiently powerfulminer could, in principle, fork the blockchain to evict the blockcontaining the request, forcing the request to be included in adifferent block with a different hash, and therefore a different inputto the VRF. However, such an attack would incur a substantial economiccost. This cost scales with the number of blocks the VRF oracle waitsuntil it calls fulfillRandomness().",
+			"methods": {
+				"requestRandomness(bytes32,uint256,uint256)": {
+					"details": "See \"SECURITY CONSIDERATIONS\" above for more information on _seed.The fulfillRandomness method receives the output, once it's providedby the Oracle, and verified by the vrfCoordinator.The _keyHash must already be registered with the VRFCoordinator, andthe _fee must exceed the fee specified during registration of the_keyHash.The returned requestId can be used to distinguish responses to *concurrent requests. It is passed as the first argument tofulfillRandomness.",
+					"params": {
+						"_fee": "The amount of LINK to send with the request",
+						"_keyHash": "ID of public key against which randomness is generated",
+						"_seed": "seed mixed into the input of the VRF"
+					},
+					"returns": {
+						"requestId": "unique ID for this request"
+					}
+				}
+			}
+		},
+		"userdoc": {
+			"methods": {
+				"requestRandomness(bytes32,uint256,uint256)": {
+					"notice": "requestRandomness initiates a request for VRF output given _seed"
+				}
+			},
+			"notice": "****************************************************************************Interface for contracts using VRF randomness *****************************************************************************"
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"Users/leilei/Downloads/VRFCoordinator/VRFConsumerBase.sol": "VRFConsumerBase"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"Users/leilei/Downloads/VRFCoordinator/SafeMath.sol": {
+			"keccak256": "0x6fa676e33e7598f560867c1dd353babae081c77580cbda47ac6bdffa5fb5fb24",
+			"urls": [
+				"bzz-raw://2a60cf6f368640c4b3c6457243a8ced9328a3f2bd4c97ed3f7506dc07bc94e27",
+				"dweb:/ipfs/Qmd1FK8mjdE8GX4nojZqsgDStV2EeQko7cjDMV2qL1cuBP"
+			]
+		},
+		"Users/leilei/Downloads/VRFCoordinator/VRFConsumerBase.sol": {
+			"keccak256": "0x43a14fe073e276a7e029b08e484c209a91a3f247666e839905cde4e494970157",
+			"urls": [
+				"bzz-raw://8bbcfa5979d35aa628e85c679ad8a6af68f90543e7c604ba76bdc32e743537a2",
+				"dweb:/ipfs/QmUaJLdCjaWVCJpnFnngjr9mA1QkCKs1SqjJPmdDw3ntoJ"
+			]
+		},
+		"Users/leilei/Downloads/VRFCoordinator/VRFRequestIDBase.sol": {
+			"keccak256": "0xdf34b43d3073edfbf56c9b8d99edd00c09b10eda82dfee45d14d199bf42ee631",
+			"urls": [
+				"bzz-raw://9f4fe1079f975fe7193964cad81a93776c3ef1be353744b0fbef3a757b750e8d",
+				"dweb:/ipfs/QmceqfHiF4SxMPoMJYPEiqPh65UYnBhHKBizFhzG1Q8Bim"
+			]
+		},
+		"Users/leilei/Downloads/VRFCoordinator/interfaces/LinkTokenInterface.sol": {
+			"keccak256": "0xbf1b1b0f6fc72a45cae680506dd7effc625973443cde0b9c24a9ad6a0c08f4a7",
+			"urls": [
+				"bzz-raw://9d81480b9e88c40870fbf1ac4ef1fa336b83f780ca60f4e699e300da7346f07c",
+				"dweb:/ipfs/Qmeezc5gCP5RvRRC27wqDkyZH7do98nqBmNAxie3yajQJz"
+			]
+		}
+	},
+	"version": 1
+}
